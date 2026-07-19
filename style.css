@@ -549,7 +549,7 @@ footer {
 
 @media (max-width: 768px) {
     .envelope {
-        transform: scale(1.1);
+        transform: scale(0.9);
         margin-bottom: 10px;
     }
 
