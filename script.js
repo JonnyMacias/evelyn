@@ -81,4 +81,63 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 800); // Wait 0.8s for flap to open and card to pop up
         });
     }
+
+    // --- Carousel Logic ---
+    const carouselImages = document.querySelectorAll('.photo-placeholder img');
+    if (carouselImages.length > 0) {
+        let currentImageIndex = 0;
+        
+        setInterval(() => {
+            carouselImages[currentImageIndex].classList.remove('active');
+            currentImageIndex = (currentImageIndex + 1) % carouselImages.length;
+            carouselImages[currentImageIndex].classList.add('active');
+        }, 3000); // Change image every 3 seconds
+    }
+
+    // --- RSVP Form Logic ---
+    const rsvpForm = document.getElementById('rsvp-form');
+    const formStatus = document.getElementById('form-status');
+    const submitBtn = document.getElementById('submit-btn');
+
+    // IMPORTANTE: URL de tu Web App de Google Apps Script
+    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw5s8UcJwS4cQcdK6CIXIV-lBr8hkrOD5vcBCSlryFYJcwbVWtK80Q4I5p6qPhT1qReKA/exec';
+
+    if (rsvpForm) {
+        rsvpForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            if (GOOGLE_SCRIPT_URL === 'PON_TU_URL_DE_WEB_APP_AQUI') {
+                formStatus.textContent = 'Falta configurar la URL del Google Script en script.js';
+                formStatus.className = 'form-status error';
+                return;
+            }
+
+            const formData = new FormData(rsvpForm);
+            
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = 'ENVIANDO... <i class="fa-solid fa-spinner fa-spin"></i>';
+            formStatus.textContent = '';
+
+            fetch(GOOGLE_SCRIPT_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                body: formData
+            })
+            .then(() => {
+                // Con mode 'no-cors' no podemos leer la respuesta, pero si llega aquí asumimos éxito
+                formStatus.textContent = '¡Confirmación enviada con éxito! Gracias.';
+                formStatus.className = 'form-status success';
+                rsvpForm.reset();
+            })
+            .catch(error => {
+                console.error('Error!', error.message);
+                formStatus.textContent = 'Hubo un error al enviar. Por favor intenta de nuevo.';
+                formStatus.className = 'form-status error';
+            })
+            .finally(() => {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = 'ENVIAR CONFIRMACIÓN <i class="fa-regular fa-paper-plane"></i>';
+            });
+        });
+    }
 });

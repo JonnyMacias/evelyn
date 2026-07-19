@@ -71,7 +71,10 @@
             <div class="tape tape-left"></div>
             <div class="tape tape-right"></div>
             <div class="photo-placeholder">
-                <i class="fa-solid fa-camera-retro"></i>
+                <img src="assets/foto1.jpeg" alt="" class="active">
+                <img src="assets/foto2.jpeg" alt="">
+                <img src="assets/foto3.jpeg" alt="">
+                <!-- <i class="fa-solid fa-camera-retro"></i> -->
             </div>
         </div>
     </section>
@@ -141,19 +144,30 @@
     <section class="rsvp-section section reveal">
         <h2 class="section-title-serif">CONFIRMAR ASISTENCIA:</h2>
 
-        <a href="https://wa.me/1234567890?text=¡Hola!%20Confirmo%20mi%20asistencia%20al%20Baby%20Shower%20de%20Marlyn%20Montoya.🥰"
-            target="_blank" class="whatsapp-large-btn pulse-btn">
-            <i class="fa-brands fa-whatsapp"></i>
-        </a>
-
         <div class="message-card rsvp-card">
             <p>Nos encantará saber que nos acompañarás, permítenos preparar los detalles confirmando tu asistencia.</p>
 
-            <a href="https://wa.me/1234567890?text=¡Hola!%20Confirmo%20mi%20asistencia%20al%20Baby%20Shower%20de%20Marlyn%20Montoya.🥰"
-                target="_blank" class="btn btn-confirm">
-                CONFIRMAR ASISTENCIA <i class="fa-regular fa-comment-dots"></i>
-            </a>
-            <p class="missing-info-note">(Actualiza el enlace con tu número en el código)</p>
+            <form id="rsvp-form" class="rsvp-form">
+                <div class="form-group">
+                    <label for="nombre">Nombre completo:</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Ej. Ana García" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="asistencia">¿Asistirás?</label>
+                    <select id="asistencia" name="asistencia" required>
+                        <option value="" disabled selected>Selecciona una opción</option>
+                        <option value="Voy a asistir">Sí, voy a asistir</option>
+                        <option value="No voy a asistir">No podré asistir</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn btn-confirm" id="submit-btn">
+                    ENVIAR CONFIRMACIÓN <i class="fa-regular fa-paper-plane"></i>
+                </button>
+
+                <p id="form-status" class="form-status"></p>
+            </form>
         </div>
     </section>
 
