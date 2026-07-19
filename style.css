@@ -1,11 +1,15 @@
 /* CSS Variables for Elegant Pastel Theme */
 :root {
-    --primary-pink: #F8BBD0; /* Soft pastel pink */
-    --text-pink: #F48FB1; /* Darker pink for text */
-    --text-brown: #8D6E63; /* Elegant copper/brown for serif text */
-    --bg-color: #FAFAFA; /* Off-white */
+    --primary-pink: #F8BBD0;
+    /* Soft pastel pink */
+    --text-pink: #F48FB1;
+    /* Darker pink for text */
+    --text-brown: #8D6E63;
+    /* Elegant copper/brown for serif text */
+    --bg-color: #FAFAFA;
+    /* Off-white */
     --white: #FFFFFF;
-    
+
     --font-script: 'Great Vibes', cursive;
     --font-serif: 'Playfair Display', serif;
     --font-sans: 'Montserrat', sans-serif;
@@ -25,7 +29,7 @@ body {
     position: relative;
     /* Soft watercolor-like background gradient */
     background-image: radial-gradient(circle at 10% 20%, rgba(248, 187, 208, 0.15) 0%, transparent 40%),
-                      radial-gradient(circle at 90% 80%, rgba(248, 187, 208, 0.15) 0%, transparent 40%);
+        radial-gradient(circle at 90% 80%, rgba(248, 187, 208, 0.15) 0%, transparent 40%);
 }
 
 .top-bow {
@@ -60,17 +64,42 @@ body {
     animation: twinkle 2s infinite alternate;
 }
 
-.s1 { top: 10%; left: 80%; animation-delay: 0s; }
-.s2 { top: 30%; right: 10%; animation-delay: 0.5s; font-size: 0.8rem; }
-.s3 { top: 60%; left: 8%; animation-delay: 1s; font-size: 1.5rem; }
+.s1 {
+    top: 10%;
+    left: 80%;
+    animation-delay: 0s;
+}
+
+.s2 {
+    top: 30%;
+    right: 10%;
+    animation-delay: 0.5s;
+    font-size: 0.8rem;
+}
+
+.s3 {
+    top: 60%;
+    left: 8%;
+    animation-delay: 1s;
+    font-size: 1.5rem;
+}
 
 @keyframes twinkle {
-    0% { opacity: 0.2; transform: scale(0.8) rotate(0deg); }
-    100% { opacity: 1; transform: scale(1.2) rotate(45deg); }
+    0% {
+        opacity: 0.2;
+        transform: scale(0.8) rotate(0deg);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1.2) rotate(45deg);
+    }
 }
 
 /* Typography */
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     text-align: center;
 }
 
@@ -115,7 +144,7 @@ h1, h2, h3 {
     font-weight: 400;
     line-height: 1;
     margin-top: 10px;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
 }
 
 .section-title-serif {
@@ -126,9 +155,23 @@ h1, h2, h3 {
     letter-spacing: 2px;
     margin-bottom: 20px;
 }
-.section-title-serif.text-small { font-size: 1.2rem; margin-bottom: 10px;}
-.section-title-serif.large { font-size: 3rem; margin-top: -10px; margin-bottom: 30px;}
-.section-title-serif.accent { color: var(--text-pink); font-style: italic; font-size: 1.5rem;}
+
+.section-title-serif.text-small {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.section-title-serif.large {
+    font-size: 3rem;
+    margin-top: -10px;
+    margin-bottom: 30px;
+}
+
+.section-title-serif.accent {
+    color: var(--text-pink);
+    font-style: italic;
+    font-size: 1.5rem;
+}
 
 .script-subtitle {
     font-family: var(--font-script);
@@ -159,7 +202,7 @@ h1, h2, h3 {
     height: 340px;
     background: var(--white);
     padding: 15px 15px 50px 15px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     position: relative;
     transform: rotate(-3deg);
     transition: transform 0.3s ease;
@@ -184,8 +227,9 @@ h1, h2, h3 {
     position: absolute;
     width: 80px;
     height: 25px;
-    background: rgba(219, 198, 160, 0.8); /* Kraft tape color */
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    background: rgba(219, 198, 160, 0.8);
+    /* Kraft tape color */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     z-index: 5;
 }
 
@@ -349,6 +393,7 @@ h1, h2, h3 {
     margin-top: 20px;
     box-shadow: 0 4px 15px rgba(244, 143, 177, 0.4);
 }
+
 .btn-confirm:hover {
     background-color: #F06292;
 }
@@ -379,58 +424,160 @@ footer {
     transform: translateY(0);
 }
 
-.fade-in-down { animation: fadeInDown 1.5s forwards; }
-.fade-in-up { animation: fadeInUp 1s forwards; opacity: 0; }
-.bounce-in { animation: bounceIn 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; opacity: 0; }
-.pulse-hover:hover { animation: pulse 1s infinite; }
-.pulse-btn { animation: pulseBtn 2s infinite; }
+.fade-in-down {
+    animation: fadeInDown 1.5s forwards;
+}
 
-.delay-1 { animation-delay: 0.3s; }
-.delay-2 { animation-delay: 0.6s; }
-.delay-3 { animation-delay: 0.9s; }
-.delay-4 { animation-delay: 1.2s; }
+.fade-in-up {
+    animation: fadeInUp 1s forwards;
+    opacity: 0;
+}
+
+.bounce-in {
+    animation: bounceIn 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    opacity: 0;
+}
+
+.pulse-hover:hover {
+    animation: pulse 1s infinite;
+}
+
+.pulse-btn {
+    animation: pulseBtn 2s infinite;
+}
+
+.delay-1 {
+    animation-delay: 0.3s;
+}
+
+.delay-2 {
+    animation-delay: 0.6s;
+}
+
+.delay-3 {
+    animation-delay: 0.9s;
+}
+
+.delay-4 {
+    animation-delay: 1.2s;
+}
 
 @keyframes fadeInDown {
-    from { opacity: 0; transform: translateY(-30px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @keyframes bounceIn {
-    0% { opacity: 0; transform: scale(0.8); }
-    50% { opacity: 1; transform: scale(1.05); }
-    70% { transform: scale(0.95); }
-    100% { opacity: 1; transform: scale(1); }
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+
+    70% {
+        transform: scale(0.95);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 @keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.02); }
-    100% { transform: scale(1); }
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.02);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }
 
 @keyframes pulseBtn {
-    0% { box-shadow: 0 0 0 0 rgba(244, 143, 177, 0.4); }
-    70% { box-shadow: 0 0 0 15px rgba(244, 143, 177, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(244, 143, 177, 0); }
+    0% {
+        box-shadow: 0 0 0 0 rgba(244, 143, 177, 0.4);
+    }
+
+    70% {
+        box-shadow: 0 0 0 15px rgba(244, 143, 177, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(244, 143, 177, 0);
+    }
 }
 
 @keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
 }
 
 @media (max-width: 768px) {
-    .main-title { font-size: 2.5rem; }
-    .name-title { font-size: 4rem; }
-    .top-bow { width: 180px; top: -10px; left: -10px; }
-    .time-box span { font-size: 2rem; }
-    .parents-names { font-size: 2.8rem; }
-    .subtitle { font-size: 2.5rem; }
+    .envelope {
+        transform: scale(1.1);
+        margin-bottom: 10px;
+    }
+
+    .main-title {
+        font-size: 2.5rem;
+    }
+
+    .name-title {
+        font-size: 4rem;
+    }
+
+    .top-bow {
+        width: 180px;
+        top: -10px;
+        left: -10px;
+    }
+
+    .time-box span {
+        font-size: 2rem;
+    }
+
+    .parents-names {
+        font-size: 2.8rem;
+    }
+
+    .subtitle {
+        font-size: 2.5rem;
+    }
 }
 
 /* --- Envelope Overlay Styles --- */
@@ -440,7 +587,10 @@ body.no-scroll {
 
 .envelope-overlay {
     position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     background-color: var(--bg-color);
     background-image: radial-gradient(circle at 50% 50%, rgba(248, 187, 208, 0.3) 0%, transparent 60%);
     z-index: 9999;
@@ -470,9 +620,12 @@ body.no-scroll {
 .envelope {
     width: 320px;
     height: 220px;
-    background-color: #F48FB1; /* Inside back */
+    background-color: #F48FB1;
+    /* Inside back */
     position: relative;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    transform: scale(1.4);
+    margin-bottom: 30px;
 }
 
 .envelope .card {
@@ -504,8 +657,10 @@ body.no-scroll {
 
 .envelope .front-left {
     position: absolute;
-    top: 0; left: 0;
-    width: 0; height: 0;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
     border-left: 160px solid #F8BBD0;
     border-top: 110px solid transparent;
     border-bottom: 110px solid transparent;
@@ -514,8 +669,10 @@ body.no-scroll {
 
 .envelope .front-right {
     position: absolute;
-    top: 0; right: 0;
-    width: 0; height: 0;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
     border-right: 160px solid #F8BBD0;
     border-top: 110px solid transparent;
     border-bottom: 110px solid transparent;
@@ -524,8 +681,10 @@ body.no-scroll {
 
 .envelope .front-bottom {
     position: absolute;
-    bottom: 0; left: 0;
-    width: 0; height: 0;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 0;
     border-left: 160px solid transparent;
     border-right: 160px solid transparent;
     border-bottom: 120px solid #F48FB1;
@@ -534,8 +693,10 @@ body.no-scroll {
 
 .envelope .flap {
     position: absolute;
-    top: 0; left: 0;
-    width: 0; height: 0;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
     border-left: 160px solid transparent;
     border-right: 160px solid transparent;
     border-top: 130px solid #F06292;
@@ -549,12 +710,23 @@ body.no-scroll {
     z-index: 0;
 }
 
+.mimmi_cart {
+    width: 300px;
+    z-index: 5;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.envelope-container.open .mimmi_cart {
+    opacity: 0;
+    transform: scale(0);
+}
+
 .wax-seal {
     position: absolute;
-    top: 130px;
+    top: 120px;
     left: 160px;
     transform: translate(-50%, -50%);
-    width: 70px;
+    width: 90px;
     z-index: 5;
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
@@ -574,6 +746,13 @@ body.no-scroll {
 }
 
 @keyframes pulseText {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.5; }
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
 }
