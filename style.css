@@ -520,6 +520,39 @@ h3 {
     100% { transform: scale(1.8); opacity: 0; }
 }
 
+/* Music Toggle Button */
+.music-toggle {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--gold);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s;
+}
+
+.music-toggle:hover {
+    transform: scale(1.1);
+}
+
+.music-toggle.playing i {
+    animation: musicSpin 3s linear infinite;
+}
+
+@keyframes musicSpin {
+    100% { transform: rotate(360deg); }
+}
+
 .form-status {
     text-align: center;
     font-weight: 600;

@@ -59,8 +59,35 @@ document.addEventListener('DOMContentLoaded', () => {
     const envelopeGraphic = document.getElementById('envelope-graphic');
     const envelopeOverlay = document.getElementById('envelope-overlay');
 
+    // --- Background Music Logic ---
+    const bgMusic = document.getElementById('bg-music');
+    const musicToggle = document.getElementById('music-toggle');
+    let isMusicPlaying = false;
+
+    function toggleMusic() {
+        if (!bgMusic || !musicToggle) return;
+        
+        if (isMusicPlaying) {
+            bgMusic.pause();
+            musicToggle.classList.remove('playing');
+        } else {
+            bgMusic.play().catch(e => console.log('Autoplay prevented:', e));
+            musicToggle.classList.add('playing');
+        }
+        isMusicPlaying = !isMusicPlaying;
+    }
+
+    if (musicToggle) {
+        musicToggle.addEventListener('click', toggleMusic);
+    }
+
     if (envelopeBtn) {
         envelopeBtn.addEventListener('click', () => {
+            // Play music on first interaction
+            if (!isMusicPlaying) {
+                toggleMusic();
+            }
+
             // 1. Open the flap and hide the seal
             envelopeGraphic.classList.add('open');
             envelopeBtn.classList.add('open');
