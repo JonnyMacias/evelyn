@@ -32,6 +32,7 @@ body {
         radial-gradient(circle at 90% 80%, rgba(248, 187, 208, 0.15) 0%, transparent 40%);
 }
 
+
 .top-bow {
     position: absolute;
     top: -30px;
@@ -50,11 +51,11 @@ body {
 }
 
 .sparkles {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     pointer-events: none;
-    z-index: 0;
+    z-index: -1;
 }
 
 .sparkle {
@@ -83,6 +84,30 @@ body {
     animation-delay: 1s;
     font-size: 1.5rem;
 }
+
+.s4 { top: 15%; left: 20%; animation-delay: 0.2s; font-size: 1rem; }
+.s5 { top: 45%; left: 85%; animation-delay: 1.2s; font-size: 0.9rem; }
+.s6 { top: 75%; right: 25%; animation-delay: 0.7s; font-size: 1.3rem; }
+.s7 { top: 85%; left: 15%; animation-delay: 1.5s; font-size: 1.1rem; }
+.s8 { top: 5%; right: 35%; animation-delay: 0.3s; font-size: 0.8rem; }
+.s9 { top: 50%; left: 35%; animation-delay: 1.8s; font-size: 1.4rem; }
+.s10 { top: 25%; left: 5%; animation-delay: 0.9s; font-size: 1rem; }
+.s11 { top: 90%; right: 5%; animation-delay: 0.1s; font-size: 1.2rem; }
+.s12 { top: 65%; right: 45%; animation-delay: 1.4s; font-size: 0.9rem; }
+
+.sparkle-mono {
+    position: absolute;
+    width: 60px;
+    opacity: 0.15;
+    animation: float 6s ease-in-out infinite;
+}
+.m1 { top: 12%; left: 10%; animation-delay: 0s; width: 70px; }
+.m2 { top: 35%; right: 15%; animation-delay: 2s; width: 50px; }
+.m3 { top: 55%; left: 25%; animation-delay: 1s; width: 65px; }
+.m4 { top: 80%; right: 10%; animation-delay: 3s; width: 80px; }
+.m5 { top: 5%; right: 20%; animation-delay: 1.5s; width: 55px; }
+.m6 { top: 90%; left: 15%; animation-delay: 0.5s; width: 60px; }
+
 
 @keyframes twinkle {
     0% {
@@ -199,13 +224,16 @@ h3 {
 /* Polaroid Photo Section */
 .polaroid-frame {
     width: 280px;
-    height: 340px;
+    height: 420px;
     background: var(--white);
     padding: 15px 15px 50px 15px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     position: relative;
     transform: rotate(-3deg);
     transition: transform 0.3s ease;
+    border-top-left-radius: 140px;
+    border-top-right-radius: 140px;
+    border: 4px solid #D4AF37;
 }
 
 .polaroid-frame:hover {
@@ -223,6 +251,8 @@ h3 {
     font-size: 3rem;
     overflow: hidden;
     position: relative;
+    border-top-left-radius: 125px;
+    border-top-right-radius: 125px;
 }
 
 .photo-placeholder img {
