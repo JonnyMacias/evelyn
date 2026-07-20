@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // If the countdown is over
         if (distance < 0) {
-            document.getElementById("countdown").innerHTML = "<h3 style='color: white; font-size: 2rem; text-align:center;'>¡El gran día ha llegado!</h3>";
+            document.getElementById("countdown").innerHTML = `<h3 style='color: white; font-size: 2rem; text-align:center;'><span class="lang-es">¡El gran día ha llegado!</span><span class="lang-en">The big day is here!</span></h3>`;
             return;
         }
 
@@ -127,9 +127,25 @@ document.addEventListener('DOMContentLoaded', () => {
         waBtn.addEventListener('click', (e) => {
             e.preventDefault();
             const phone = "14126892477";
-            const message = "Gracias por la invitacion, confirmo mi asistencia al BabyShower de Marlyn Montoya";
+            const isEnglish = document.body.classList.contains('lang-en');
+            const message = isEnglish 
+                ? "Thank you for the invitation, I confirm my attendance to Marlyn Montoya's Baby Shower"
+                : "Gracias por la invitacion, confirmo mi asistencia al BabyShower de Marlyn Montoya";
             const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
             window.open(url, '_blank');
+        });
+    }
+
+    // --- Language Toggle Logic ---
+    const langToggleBtn = document.getElementById('lang-toggle');
+    if (langToggleBtn) {
+        langToggleBtn.addEventListener('click', () => {
+            document.body.classList.toggle('lang-en');
+            if (document.body.classList.contains('lang-en')) {
+                langToggleBtn.innerText = 'ES';
+            } else {
+                langToggleBtn.innerText = 'EN';
+            }
         });
     }
 });
